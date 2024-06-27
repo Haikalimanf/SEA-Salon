@@ -1,20 +1,14 @@
 package com.example.seasalon.ui.tracker
 
-import android.content.Intent
-import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
-import androidx.navigation.findNavController
-import androidx.navigation.ui.setupWithNavController
 import com.example.seasalon.R
 import com.example.seasalon.databinding.ActivityNavigationBinding
-import com.example.seasalon.ui.booking.fragment_booking
 import com.example.seasalon.ui.home.FragmentHome
 import com.example.seasalon.ui.profile.ProfileFragment
-import com.example.seasalon.utils.SharedReference
-import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.example.seasalon.ui.schedule.ScheduleFragment
 
 class NavigationActivity : AppCompatActivity() {
 
@@ -38,7 +32,7 @@ class NavigationActivity : AppCompatActivity() {
                 }
 
                 R.id.navigation_schedule -> {
-                    fragment = fragment_booking()
+                    fragment = ScheduleFragment()
                     binding.bottomNavigator.visibility = View.VISIBLE
                 }
 

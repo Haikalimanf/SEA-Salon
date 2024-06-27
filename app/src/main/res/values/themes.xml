@@ -16,4 +16,13 @@
     <style name="RobotoButtonStyle" parent="android:Widget.Holo.Button">
         <item name="android:fontFamily">@font/sora_variablefont_wght</item>
     </style>
+
+    <style name="Theme.SEASalon.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.SEASalon.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.SEASalon.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

@@ -7,7 +7,6 @@ import android.util.Log
 import android.widget.Toast
 import com.example.seasalon.ui.auth.login.LoginActivity
 import com.example.seasalon.ui.auth.register.RegisterActivity
-import com.example.seasalon.ui.home.FragmentHome
 import com.example.seasalon.utils.SharedReference
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.Firebase
@@ -87,14 +86,43 @@ class repository {
             .addOnSuccessListener { result ->
                 for (document in result) {
                     val name = document.getString("name")
-                    if (name != null) {
-                        Log.d("CEK", name)
-                        pref.setName(name)
-                    }
+                    val phone = document.getString("noPhone")
+                    val emailUser = document.getString("email")
+                        pref.setName(name.toString())
+                        pref.setPhone(phone.toString())
+                        pref.setEmail(emailUser.toString())
+                    Log.d("erwin", "onViewCreated: ${emailUser}")
                 }
             }
             .addOnFailureListener { exception ->
                 Log.w("coba", "Error getting documents.", exception)
             }
     }
+
+    fun loginWithEmailAndPassword(
+        activity: LoginActivity,
+        email: String,
+        password: String,
+    ){
+        auth.signInWithEmailAndPassword(email, password)
+            .addOnCompleteListener(activity) { task ->
+                if (task.isSuccessful) {
+                    // Sign in success, update UI with the signed-in user's information
+                    Log.d("error", "signInWithEmail:success")
+                    getUserFromAuth(activity,email)
+                    pref.apply {
+                        setLoggedIn(true)
+                    }
+                } else {
+                    // If sign in fails, display a message to the user.
+                    Log.w("error", "signInWithEmail:failure", task.exception)
+                    Toast.makeText(
+                        activity,
+                        "Authentication failed.",
+                        Toast.LENGTH_SHORT,
+                    ).show()
+                }
+            }
+    }
+
 }

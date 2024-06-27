@@ -1,5 +1,6 @@
 package com.example.seasalon.data
 
+import com.example.seasalon.ui.booking.DataTime
 import com.example.seasalon.ui.home.DataServices
 
 object DataReference {
@@ -25,5 +26,35 @@ object DataReference {
             "Facial",
             "Instant Glow, Lasting Beauty!",
             "https://raw.githubusercontent.com/Haikalimanf/AssetFotoIconSalon/main/facial_icon.png")
+    )
+
+    val time = listOf(
+        DataTime(
+            "09:00 AM",
+        ),
+        DataTime(
+            "10:00 AM",
+        ),
+        DataTime(
+            "11:00 AM",
+        ),
+        DataTime(
+            "01:00 PM",
+        ),
+        DataTime(
+            "02:00 PM",
+        ),
+        DataTime(
+            "04:00 PM",
+        ),
+        DataTime(
+            "05:00 PM",
+        ),
+        DataTime(
+            "07:00 PM",
+        ),
+        DataTime(
+            "08:00 PM",
+        ),
     )
 }

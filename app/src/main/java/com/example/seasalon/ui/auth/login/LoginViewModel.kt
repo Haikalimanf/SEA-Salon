@@ -7,10 +7,11 @@ import com.example.seasalon.data.repository
 class LoginViewModel : ViewModel() {
     private val repository = repository()
 
-    fun checkUserFromEmail(
-        activity: Context,
-        email: String
+    fun login(
+        activity: LoginActivity,
+        email: String,
+        password: String,
     ){
-        repository.getUserFromAuth(activity ,email = email)
+        repository.loginWithEmailAndPassword(activity,email,password)
     }
 }

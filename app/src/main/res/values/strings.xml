@@ -9,5 +9,9 @@
     <string name="profile_icon">Profile</string>
     <string name="schedule_icon">Schedule</string>
     <string name="Notification_icon">Notification</string>
+    <string name="title_activity_schedule">ScheduleActivity</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="greetingToUser">Contact us for more information! Our team at SEA Salon is ready to give you the best experience. Feel free to reach us by phone, email, or visit us in person. We look forward to seeing you!</string>
 
 </resources>

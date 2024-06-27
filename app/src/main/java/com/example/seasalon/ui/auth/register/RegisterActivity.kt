@@ -2,6 +2,7 @@ package com.example.seasalon.ui.auth.register
 
 import android.app.ProgressDialog
 import android.content.ContentValues
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -11,6 +12,7 @@ import androidx.lifecycle.Observer
 import com.example.seasalon.R
 import com.example.seasalon.databinding.ActivityLoginBinding
 import com.example.seasalon.databinding.ActivityRegisterBinding
+import com.example.seasalon.ui.auth.login.LoginActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -47,6 +49,11 @@ class RegisterActivity : AppCompatActivity() {
             } else {
                 Toast.makeText(applicationContext, "Silahkan isi semua", Toast.LENGTH_SHORT).show()
             }
+        }
+
+        binding.tvLoginHere.setOnClickListener{
+            val intent = Intent(this@RegisterActivity, LoginActivity::class.java)
+            startActivity(intent)
         }
     }
 }

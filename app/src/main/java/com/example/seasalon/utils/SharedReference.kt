@@ -21,7 +21,7 @@ class SharedReference(context: Context) {
         return sharedPreferences.getString(EMAIL, "")
     }
 
-    fun setEmail(email: String) {
+    fun setEmail(email: String?) {
         editor.putString(EMAIL, email)
         editor.apply()
     }
@@ -30,13 +30,13 @@ class SharedReference(context: Context) {
         return sharedPreferences.getString(NAME, "")
     }
 
-    fun setName(email: String) {
-        editor.putString(NAME, email)
+    fun setName(name: String) {
+        editor.putString(NAME, name)
         editor.apply()
     }
 
-    fun getPhone(): Int {
-        return sharedPreferences.getInt(PHONE, 0)
+    fun getPhone(): String? {
+        return sharedPreferences.getString(PHONE, "")
     }
 
     fun setPhone(phone: String) {
@@ -50,6 +50,14 @@ class SharedReference(context: Context) {
 
     fun setUID(uid: String) {
         editor.putString(UID, uid)
+        editor.apply()
+    }
+
+    fun clearData(){
+        editor.putString(PHONE, "")
+        editor.putString(UID, "")
+        editor.putString(NAME, "")
+        editor.putString(EMAIL, "")
         editor.apply()
     }
 
