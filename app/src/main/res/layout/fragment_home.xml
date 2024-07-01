@@ -58,13 +58,13 @@
         </LinearLayout>
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/starRating"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_marginTop="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:srcCompat="@tools:sample/avatars" />
+            tools:srcCompat="@drawable/baseline_star_rate_24" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView"

@@ -68,7 +68,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView7">
 
         <ImageButton
-            android:id="@+id/button3"
+            android:id="@+id/btnCalender"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:src="@drawable/baseline_calendar_black"
@@ -76,6 +76,7 @@
             />
 
         <TextView
+            android:id="@+id/tvShowSelectedDate"
             android:layout_gravity="center_vertical"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -106,10 +107,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
+        tools:listitem=""
         />
 
     <Button
-        android:id="@+id/btnSignIn"
+        android:id="@+id/btnBooking"
         android:layout_width="350dp"
         android:layout_marginTop="10dp"
         android:layout_height="wrap_content"

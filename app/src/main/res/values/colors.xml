@@ -7,6 +7,8 @@
     <color name="bg_tint">#4E4949</color>
     <color name="bg_splace">#00101F</color>
     <color name="blue_sea">#0288D1</color>
+    <color name="blue_sea_2">#6BB3DA</color>
+    <color name="red">#F44336</color>
 
 
 </resources>

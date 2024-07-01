@@ -7,6 +7,7 @@ import android.util.Log
 import android.widget.Toast
 import com.example.seasalon.ui.auth.login.LoginActivity
 import com.example.seasalon.ui.auth.register.RegisterActivity
+import com.example.seasalon.ui.booking.BookingActivity
 import com.example.seasalon.utils.SharedReference
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.Firebase
@@ -88,10 +89,11 @@ class repository {
                     val name = document.getString("name")
                     val phone = document.getString("noPhone")
                     val emailUser = document.getString("email")
-                        pref.setName(name.toString())
-                        pref.setPhone(phone.toString())
-                        pref.setEmail(emailUser.toString())
-                    Log.d("erwin", "onViewCreated: ${emailUser}")
+                    val role = document.getString("role")
+                    pref.setName(name.toString())
+                    pref.setPhone(phone.toString())
+                    pref.setEmail(emailUser.toString())
+                    pref.setRole(role.toString())
                 }
             }
             .addOnFailureListener { exception ->
@@ -125,4 +127,62 @@ class repository {
             }
     }
 
+    fun getUserBooking(
+        context: Context,
+        email: String,
+    ){
+        pref = SharedReference(context)
+        db.collection("users")
+            .whereEqualTo("email", email)
+            .get()
+            .addOnSuccessListener { result ->
+                for (document in result) {
+                    val name = document.getString("name")
+                    val phone = document.getString("noPhone")
+                    val emailUser = document.getString("email")
+                    pref.setName(name.toString())
+                    pref.setPhone(phone.toString())
+                    pref.setEmail(emailUser.toString())
+                }
+            }
+            .addOnFailureListener { exception ->
+                Log.w("coba", "Error getting documents.", exception)
+            }
+    }
+
+    fun saveDataBooking(
+        activity: BookingActivity,
+        progressDialog: ProgressDialog,
+        name: String,
+        date: String,
+        service: String = "",
+        timeBooking: String,
+    ) {
+
+        val email = pref.getEmail()
+        val bookingsData = hashMapOf(
+            "email" to email,
+            "name" to name,
+            "service" to service,
+            "date" to date,
+            "time" to timeBooking,
+        )
+
+        db.collection("booking")
+            .add(bookingsData)
+            .addOnSuccessListener { documentReference ->
+                progressDialog.dismiss()
+                Toast.makeText(activity.applicationContext, "Successfully", Toast.LENGTH_SHORT).show()
+                Log.d(ContentValues.TAG, "DocumentSnapshot added with ID: ${documentReference.id}")
+            }
+            .addOnFailureListener { e ->
+                progressDialog.dismiss()
+                Toast.makeText(activity.applicationContext, e.localizedMessage, Toast.LENGTH_SHORT).show()
+                Log.w(ContentValues.TAG, "Error adding document", e)
+            }
+
+    }
+
 }
+
+

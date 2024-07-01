@@ -27,7 +27,7 @@ class ProfileFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        pref = SharedReference(requireContext()) // Initialize pref here
+        pref = SharedReference(requireContext())
     }
 
     override fun onCreateView(

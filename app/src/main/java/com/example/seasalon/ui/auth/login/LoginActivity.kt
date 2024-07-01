@@ -3,7 +3,9 @@ package com.example.seasalon.ui.auth.login
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.viewModels
+import com.example.seasalon.admin.ui.tracker.NavigationAdminActivity
 import com.example.seasalon.databinding.ActivityLoginBinding
 import com.example.seasalon.ui.auth.register.RegisterActivity
 import com.example.seasalon.ui.tracker.NavigationActivity
@@ -40,9 +42,18 @@ class LoginActivity : AppCompatActivity() {
             val password = binding.etPassword.text.toString().trim()
 
             viewModel.login(activity = this,email,password)
-            val intent = Intent(this@LoginActivity, NavigationActivity::class.java)
-            startActivity(intent)
-            finish()
+            var roleUser : String = pref.getRole().toString()
+            Log.d("King", "onCreate: $roleUser")
+            if (roleUser == "user") {
+                val intent = Intent(this@LoginActivity, NavigationActivity::class.java)
+                startActivity(intent)
+                finish()
+            } else if (roleUser == "admin") {
+                val intent = Intent(this@LoginActivity, NavigationAdminActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
+
         }
     }
 }

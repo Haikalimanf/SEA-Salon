@@ -8,7 +8,8 @@ import com.example.seasalon.R
 import com.example.seasalon.databinding.ActivityNavigationBinding
 import com.example.seasalon.ui.home.FragmentHome
 import com.example.seasalon.ui.profile.ProfileFragment
-import com.example.seasalon.ui.schedule.ScheduleFragment
+import com.example.seasalon.ui.reservation.ReservationFragment
+
 
 class NavigationActivity : AppCompatActivity() {
 
@@ -32,7 +33,7 @@ class NavigationActivity : AppCompatActivity() {
                 }
 
                 R.id.navigation_schedule -> {
-                    fragment = ScheduleFragment()
+                    fragment = ReservationFragment()
                     binding.bottomNavigator.visibility = View.VISIBLE
                 }
 

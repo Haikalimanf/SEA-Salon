@@ -3,21 +3,14 @@ package com.example.seasalon.ui.home
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
-import com.example.seasalon.R
-import com.example.seasalon.databinding.ItemButtonTimeBinding
 import com.example.seasalon.databinding.ItemCardServiceBinding
-import com.example.seasalon.ui.auth.login.LoginActivity
 import com.example.seasalon.ui.booking.BookingActivity
-import com.example.seasalon.ui.booking.DataTime
 
 class ListServiceAdapter :
     ListAdapter<DataServices, ListServiceAdapter.MyViewHolder>(DIFF_CALLBACK) {

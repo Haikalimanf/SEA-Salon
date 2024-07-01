@@ -6,8 +6,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.seasalon.R
+import com.example.seasalon.databinding.FragmentHomeBinding
+import com.example.seasalon.databinding.FragmentScheduleBinding
+import com.example.seasalon.ui.home.ListServiceAdapter
+import com.example.seasalon.utils.SharedReference
 
 class ScheduleFragment : Fragment() {
+    private var _binding: FragmentScheduleBinding? = null
+    private val binding get() = _binding!!
+    private lateinit var adapter: ListServiceAdapter
+    private lateinit var pref: SharedReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,7 +27,8 @@ class ScheduleFragment : Fragment() {
         savedInstanceState: Bundle?,
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_schedule, container, false)
+        _binding = FragmentScheduleBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     companion object {

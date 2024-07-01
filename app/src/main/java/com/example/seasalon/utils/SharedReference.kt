@@ -44,6 +44,43 @@ class SharedReference(context: Context) {
         editor.apply()
     }
 
+    fun getRole(): String? {
+        return sharedPreferences.getString(ROLE, "")
+    }
+
+    fun setRole(role: String) {
+        editor.putString(ROLE, role)
+        editor.apply()
+    }
+
+
+    fun getDate(): String? {
+        return sharedPreferences.getString(DATE, "")
+    }
+
+    fun setDate(date: String) {
+        editor.putString(DATE, date)
+        editor.apply()
+    }
+
+    fun getTime(): String? {
+        return sharedPreferences.getString(TIME, "")
+    }
+
+    fun setTime(time: String) {
+        editor.putString(TIME, time)
+        editor.apply()
+    }
+
+    fun getService(): String? {
+        return sharedPreferences.getString(SERVICE, "")
+    }
+
+    fun setService(service: String) {
+        editor.putString(SERVICE, service)
+        editor.apply()
+    }
+
     fun getUID(): String? {
         return sharedPreferences.getString(UID, "")
     }
@@ -58,6 +95,10 @@ class SharedReference(context: Context) {
         editor.putString(UID, "")
         editor.putString(NAME, "")
         editor.putString(EMAIL, "")
+        editor.putString(DATE, "")
+        editor.putString(TIME, "")
+        editor.putString(SERVICE, "")
+        editor.putString(ROLE, "")
         editor.apply()
     }
 
@@ -66,8 +107,11 @@ class SharedReference(context: Context) {
         private const val LOGIN = "login"
         private const val EMAIL = "email"
         private const val NAME = "name"
-        private const val PHOTO = "photo"
+        private const val ROLE = "role"
         private const val PHONE ="phone"
+        private const val DATE ="date"
+        private const val TIME ="time"
+        private const val SERVICE ="service"
         private const val UID = "uid"
     }
 }
