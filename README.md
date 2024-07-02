@@ -77,4 +77,11 @@ Berikut adalah teknologi yang digunakan :
 Berikut adalah langkah-langkah untuk menginstal dan menjalankan aplikasi ini di perangkat Anda:
 1. **Clone Repositori** <br>
 Jika ingin melakukan repository dengan ini <br>
-
+```sh
+    git clone https://github.com/Haikalimanf/SEA-Salon.git
+```
+2. **Buka proyek dengan Android Studio**.
+3. **Sinkronisasi project dengan Gradle** untuk mengunduh semua depend
+<br>
+Jika ingin menjalankan aplikasi melalui APK di Handphone pastikan hal berikut: <br>
+- Minimal menjalankan aplikasi adalah Android 11 (API level 30)
