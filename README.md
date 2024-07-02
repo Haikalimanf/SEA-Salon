@@ -15,7 +15,7 @@ Dengan antarmuka yang mudah digunakan dan fitur yang lengkap, aplikasi ini dihar
 - **Menghubungi Customer Service**: Pengguna dapat dengan mudah menghubungi customer service untuk pertanyaan atau bantuan.
 
 ## Demo Aplikasi
-Link = 
+Link = https://drive.google.com/drive/folders/1c5sxk3wvzU1JXfhfxcuN1oxurYfc9G-H?usp=sharing
 <br>
 <br>
 Akun Admin : <br>
