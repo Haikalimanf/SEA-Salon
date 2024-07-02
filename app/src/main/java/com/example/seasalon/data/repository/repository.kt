@@ -8,6 +8,7 @@ import android.widget.Toast
 import com.example.seasalon.ui.auth.login.LoginActivity
 import com.example.seasalon.ui.auth.register.RegisterActivity
 import com.example.seasalon.ui.booking.BookingActivity
+import com.example.seasalon.ui.rating.RatingActivity
 import com.example.seasalon.utils.SharedReference
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.Firebase
@@ -168,20 +169,50 @@ class repository {
             "time" to timeBooking,
         )
 
-        db.collection("booking")
+        db.collection("bookings")
             .add(bookingsData)
             .addOnSuccessListener { documentReference ->
                 progressDialog.dismiss()
                 Toast.makeText(activity.applicationContext, "Successfully", Toast.LENGTH_SHORT).show()
+                Log.d("paebj", "DocumentSnapshot added with ID: ${documentReference.id}")
+            }
+            .addOnFailureListener { e ->
+                progressDialog.dismiss()
+                Log.w("paebj", "Error adding document", e)
+            }
+
+    }
+
+    fun saveDataReview(
+        activity: RatingActivity,
+        progressDialog: ProgressDialog,
+        name: String,
+        email: String,
+        comment: String,
+        rating: String,
+    ) {
+        val riview = hashMapOf(
+            "name" to name,
+            "email" to email,
+            "comment" to comment,
+            "rating" to rating
+        )
+
+        db.collection("riview")
+            .add(riview)
+            .addOnSuccessListener { documentReference ->
+                progressDialog.dismiss()
+                Toast.makeText(activity.applicationContext, "Successfully", Toast.LENGTH_SHORT).show()
                 Log.d(ContentValues.TAG, "DocumentSnapshot added with ID: ${documentReference.id}")
+                activity.finish()
             }
             .addOnFailureListener { e ->
                 progressDialog.dismiss()
                 Toast.makeText(activity.applicationContext, e.localizedMessage, Toast.LENGTH_SHORT).show()
                 Log.w(ContentValues.TAG, "Error adding document", e)
             }
-
     }
+
 
 }
 

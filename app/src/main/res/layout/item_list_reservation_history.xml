@@ -63,10 +63,10 @@
             android:orientation="horizontal"
             android:layout_marginTop="15dp"
             android:layout_marginBottom="10dp"
-            android:layout_marginStart="220dp">
+            android:layout_marginStart="230dp">
 
             <TextView
-                android:id="@+id/TvStatus"
+                android:id="@+id/tvStatus"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"

@@ -30,41 +30,68 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
         app:layout_constraintVertical_bias="0.931">
 
-
         <LinearLayout
-            android:id="@+id/linearLayout2"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
+            android:orientation="horizontal"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <TextView
-                android:id="@+id/tvGreetingUser"
+
+            <LinearLayout
+                android:id="@+id/linearLayout2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/tvGreetingUser"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/users_name"
+                    android:textColor="@color/white"
+                    />
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/greeting"
+                    android:textColor="@color/white"/>
+            </LinearLayout>
+
+<!--            <ImageView-->
+<!--                android:id="@+id/starRating"-->
+<!--                android:layout_width="48dp"-->
+<!--                android:layout_height="48dp"-->
+<!--                android:layout_marginTop="20dp"-->
+<!--                android:layout_marginStart="140dp"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent"-->
+<!--                tools:src="@drawable/baseline_star_rate_24" />-->
+
+            <ImageButton
+                android:id="@+id/starRating"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
                 android:layout_marginTop="20dp"
-                android:text="@string/users_name"
-                android:textColor="@color/white"
+                android:layout_marginStart="130dp"
+                android:src="@drawable/baseline_star_rate_24"
+                android:background="@color/blue_sea"
                 />
 
-            <TextView
-                android:id="@+id/textView4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:text="@string/greeting"
-                android:textColor="@color/white"/>
+
         </LinearLayout>
 
-        <ImageView
-            android:id="@+id/starRating"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_marginTop="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:srcCompat="@drawable/baseline_star_rate_24" />
+
+
+
+
+
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView"

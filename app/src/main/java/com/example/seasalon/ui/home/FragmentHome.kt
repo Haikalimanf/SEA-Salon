@@ -17,6 +17,7 @@ import com.example.seasalon.databinding.FragmentHomeBinding
 import com.example.seasalon.ui.auth.login.LoginViewModel
 import com.example.seasalon.ui.booking.BookingActivity
 import com.example.seasalon.ui.call.CallActivity
+import com.example.seasalon.ui.rating.RatingActivity
 import com.example.seasalon.ui.tracker.NavigationActivity
 import com.example.seasalon.utils.SharedReference
 import com.google.firebase.Firebase
@@ -55,6 +56,11 @@ class FragmentHome : Fragment() {
 
         binding.fabCalling.setOnClickListener {
             val intent = Intent(context, CallActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.starRating.setOnClickListener {
+            val intent = Intent(context, RatingActivity::class.java)
             startActivity(intent)
         }
 

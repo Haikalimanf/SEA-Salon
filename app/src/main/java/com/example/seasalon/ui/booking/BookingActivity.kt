@@ -25,7 +25,6 @@ import java.util.Calendar
 
 
 class BookingActivity : AppCompatActivity(), ListTimeAdapter.OnTimeSelectedListener {
-    private val viewModel: BookingViewModel by viewModels()
     private lateinit var binding: ActivityBookingBinding
     private lateinit var adapter: ListTimeAdapter
     private var selectedDate: Calendar = Calendar.getInstance()
@@ -93,6 +92,7 @@ class BookingActivity : AppCompatActivity(), ListTimeAdapter.OnTimeSelectedListe
             "service" to service,
             "date" to date,
             "time" to timeBooking,
+            "status" to "upcoming"
         )
 
         db.collection("bookings")
@@ -106,6 +106,7 @@ class BookingActivity : AppCompatActivity(), ListTimeAdapter.OnTimeSelectedListe
             }
 
     }
+
 
     @RequiresApi(Build.VERSION_CODES.O)
     private fun showDatePickerDialog() {

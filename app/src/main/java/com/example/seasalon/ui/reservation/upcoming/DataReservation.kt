@@ -1,9 +1,10 @@
-package com.example.seasalon.ui.reservation
+package com.example.seasalon.ui.reservation.upcoming
 
 data class DataReservation(
     val name: String?,
     val service: String?,
     val date: String?,
     val time: String?,
-    val isUpcoming: Boolean
+    val status: String?,
+    val isUpcoming: Boolean,
 )

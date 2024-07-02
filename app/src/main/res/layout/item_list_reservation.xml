@@ -72,10 +72,10 @@
                 android:text="Cancel Booking" />
 
             <TextView
-                android:id="@+id/TvStatus"
+                android:id="@+id/tvStatus"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="170dp"
+                android:layout_marginStart="150dp"
                 android:layout_weight="1"
                 android:text="Checking" />
 
