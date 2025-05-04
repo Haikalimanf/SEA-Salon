@@ -22,7 +22,6 @@ class repository {
     private val auth: FirebaseAuth = Firebase.auth
     private lateinit var pref: SharedReference
 
-
     fun saveDataUser(
         activity: RegisterActivity,
         progressDialog: ProgressDialog,
